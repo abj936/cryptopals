@@ -16,11 +16,11 @@ test: init requirements-test.txt tests/
 	py.test tests/
 
 find:
-	find . -type d -name "__pycache__" -or -type d -name "$(VENV)"
+	find . -type d -name "__pycache__"
 
 clean: find
 	find . -type f -name "*.pyc" -delete
-	find . -type d -name "__pycache__" -delete -or -type d -name "$(VENV)" -delete
+	find . -type d -name "__pycache__" -delete
 	rm -r ".pytest_cache"
 
 .PHONY: init test clean
